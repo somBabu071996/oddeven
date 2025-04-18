@@ -1,22 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int usage(void) {
-    printf("\nUsage\n");
-    printf("=========================\n");
-    printf("evenodd <integer>\n");
-    printf("=========================\n");
-    return 0;
-}
+int main(void) {
+    int num;
 
-int main(int argc, char *argv[]) {  
-    if (argc <= 1) {
-        printf("ERROR: No argument found...\n");
-        usage();
-        exit(1);
+    printf("Enter an integer: ");
+    if (scanf("%d", &num) != 1) {
+        printf("Invalid input. Please enter an integer.\n");
+        return 1;
     }
-
-    int num = atoi(argv[1]);
 
     if (num % 2 == 0)
         printf("%d is an EVEN number.\n", num);
